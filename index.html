@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan Dyżurów</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Generator Grup Dyżurujących</h1>
+      <form id="scheduleForm">
+        <label for="daysInMonth">📅 Ilość dni w miesiącu:</label>
+        <input type="number" id="daysInMonth" required />
+
+        <label for="noNightShifts">🌙 Ilość dni bez nocnych dyżurów:</label>
+        <input type="number" id="noNightShifts" required />
+
+        <h2>🔹 Stany etatowe zespołów:</h2>
+
+        <div class="team">
+          <h3>WK</h3>
+          <label>Łączna ilość osób:</label>
+          <input type="number" id="wk_total" required />
+          <label>Ilość kobiet:</label>
+          <input type="number" id="wk_women" required />
+          <label>Kobiety mogące pracować w nocy:</label>
+          <input type="number" id="wk_women_night" required />
+        </div>
+
+        <div class="team">
+          <h3>WM</h3>
+          <label>Łączna ilość osób:</label>
+          <input type="number" id="wm_total" required />
+          <label>Ilość kobiet:</label>
+          <input type="number" id="wm_women" required />
+          <label>Kobiety mogące pracować w nocy:</label>
+          <input type="number" id="wm_women_night" required />
+        </div>
+
+        <div class="team">
+          <h3>WŻ</h3>
+          <label>Łączna ilość osób:</label>
+          <input type="number" id="wz_total" required />
+          <label>Ilość kobiet:</label>
+          <input type="number" id="wz_women" required />
+          <label>Kobiety mogące pracować w nocy:</label>
+          <input type="number" id="wz_women_night" required />
+        </div>
+
+        <div class="team">
+          <h3>PG</h3>
+          <label>Łączna ilość osób:</label>
+          <input type="number" id="pg_total" required />
+          <label>Ilość kobiet:</label>
+          <input type="number" id="pg_women" required />
+          <label>Kobiety mogące pracować w nocy:</label>
+          <input type="number" id="pg_women_night" required />
+        </div>
+
+        <div class="team">
+          <h3>WN</h3>
+          <label>Łączna ilość osób:</label>
+          <input type="number" id="wn_total" required />
+          <label>Ilość kobiet:</label>
+          <input type="number" id="wn_women" required />
+          <label>Kobiety mogące pracować w nocy:</label>
+          <input type="number" id="wn_women_night" required />
+        </div>
+
+        <div class="team">
+          <h3>WDŚ</h3>
+          <label>Łączna ilość osób:</label>
+          <input type="number" id="wds_total" required />
+          <label>Ilość kobiet:</label>
+          <input type="number" id="wds_women" required />
+          <label>Kobiety mogące pracować w nocy:</label>
+          <input type="number" id="wds_women_night" required />
+        </div>
+
+        <button type="submit">Oblicz grupy</button>
+      </form>
+
+      <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
