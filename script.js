@@ -8,6 +8,7 @@ document
     const noNightShifts = parseInt(
       document.getElementById("noNightShifts").value
     );
+    const nightShiftDays = daysInMonth - noNightShifts;
 
     // Obliczanie ilości grup
     const totalGD6 = daysInMonth * 2;
@@ -40,8 +41,8 @@ document
     let remainingGD7 = totalGD7;
     let remainingGD14 = totalGD14;
     let remainingGN22 = totalGN22;
-    let remainingWomenGD14 = totalGD14;
-    let remainingWomenGN22 = noNightShifts;
+    let remainingWomenGD14 = daysInMonth; // Każdego dnia jedna kobieta w GD14
+    let remainingWomenGN22 = nightShiftDays; // Tylko w określone dni kobieta w GN22
 
     teams.forEach((team) => {
       let proportion = teamData[team].total / totalMembers;
@@ -51,9 +52,11 @@ document
         GD7: Math.floor(proportion * totalGD7),
         GD14: Math.floor(proportion * totalGD14),
         GN22: Math.floor(proportion * totalGN22),
-        GD14_Women: Math.floor((teamData[team].women / totalWomen) * totalGD14),
+        GD14_Women: Math.floor(
+          (teamData[team].women / totalWomen) * daysInMonth
+        ),
         GN22_Women: Math.floor(
-          (teamData[team].womenNight / totalWomenNight) * noNightShifts
+          (teamData[team].womenNight / totalWomenNight) * nightShiftDays
         ),
       };
 
